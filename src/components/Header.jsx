@@ -2,6 +2,8 @@ import { useState } from "react";
 import QR from "../assets/QR.png";
 import GgPlay from "../assets/Gg_play.png";
 import AppStore from "../assets/App_store.png";
+import Avt_trong from "../assets/avater_trong.jpg";
+import CartEmpty from "../assets/cart-empty.png"
 import {
   FaFacebookF,
   FaInstagram,
@@ -11,6 +13,8 @@ import {
 import { FiBell, FiHelpCircle, FiGlobe, FiChevronDown } from "react-icons/fi";
 export default function Header() {
   const [showQR, setShowQR] = useState(false);
+  const [showNoty, setShowNoty] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   return (
     <header className="bg-gradient-to-b from-[#f94c43] to-[#fd6d2f]">
       {/* Top bar */}
@@ -35,12 +39,14 @@ export default function Header() {
             <a href="#" className="hover:opacity-60 pt-4">
               Download the App
             </a>
-            <div className="absolute top-full left-0 w-[200px] h-6 bg-transparent group-hover:block" />
+            <div className="absolute top-full left-0 w-[200px] h-8 bg-transparent group-hover:block" />
 
             <div
               className={`absolute w-[200px] h-auto mt-3 bg-white rounded shadow p-2.5
                ${
-                 showQR ? "opacity-100 block " : "opacity-0 block "
+                 showQR
+                   ? "opacity-100 block visible "
+                   : "opacity-0 block invisible "
                } transition-opacity duration-300 ease-in-out `}
             >
               <img src={QR} alt="QR" className="w-full h-auto mb-3" />
@@ -75,9 +81,55 @@ export default function Header() {
         </div>
         {/* Right */}
         <div className="flex items-center justify-end gap-5 text-white text-sm">
-          <div className="flex items-center gap-1 cursor-pointer hover:opacity-70">
-            <FiBell className="text-lg" />
-            <span>Notification</span>
+          <div
+            onMouseEnter={() => setShowNoty(true)}
+            onMouseLeave={() => setShowNoty(false)}
+            className="flex items-center gap-1 cursor-pointer relative group"
+          >
+            <div className=" flex hover:opacity-60 gap-1">
+              <FiBell className="text-lg   " />
+              <span>Notification</span>
+            </div>
+            {/* handle show notifications */}
+            <div className="absolute top-full left-0 w-[100px] h-4 bg-transparent group-hover:block" />
+            <div
+              className={`origin-top-right  transition-all duration-300 ease-out transform absolute right-0 top-1
+                  ${
+                    showNoty
+                      ? "opacity-100 visible scale-100 translate-x-0 translate-y-0"
+                      : "opacity-0 invisible scale-75 translate-x-2 -translate-y-2"
+                  }`}
+            >
+              <div
+                className={`
+                  absolute w-0 h-0 
+                  border-l-[20px] border-l-transparent 
+                  border-r-[20px] border-r-transparent 
+                  border-b-[14px] border-b-white 
+                  right-6 top-5 z-50`}
+              ></div>
+              <div
+                className={`absolute top-8 right-0 bg-white text-black w-[360px] h-[320px] shadow-lg rounded-lg z-50 
+              flex justify-between flex-col`}
+              >
+                <div className="flex flex-col items-center mt-[92px] ">
+                  <img
+                    src={Avt_trong}
+                    alt="avatar"
+                    className="w-20 h-20 mb-3 rounded-full"
+                  />
+                  <p className="text-base mb-4 ">Login to view Notifications</p>
+                </div>
+                <div className="flex  bg-slate-100 text-black ">
+                  <button className=" flex-1 px-4 py-2  hover:text-red-500 hover:bg-slate-200">
+                    Register
+                  </button>
+                  <button className="flex-1 px-4 py-2  hover:text-red-500 hover:bg-slate-200">
+                    Login
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="flex items-center gap-1 cursor-pointer hover:opacity-70">
@@ -116,7 +168,7 @@ export default function Header() {
             </svg>
           </a>
         </div>
-        <div className="flex flex-1 bg-white rounded-md overflow-hidden shadow-sm h-[44px] ml-14">
+        <div className="flex flex-1 bg-white rounded-md overflow-hidden shadow-sm h-[44px] ml-14 mr-14">
           <input
             type="text"
             placeholder="Enter to search product"
@@ -127,10 +179,46 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="ml-14 mr-16 items-center flex">
+        <div
+          onMouseEnter={() => setShowCart(true)}
+          onMouseLeave={() => setShowCart(false)}
+          className=" pr-16 items-center flex relative"
+        >
           <button>
             <FaShoppingCart className="text-3xl text-white" />
           </button>
+          <div className="absolute top-full left-0 w-[100px] h-4 bg-transparent group-hover:block" />
+          <div
+            className={`origin-top-right  transition-all duration-300 ease-out transform absolute right-8 top-3
+                  ${
+                    showCart
+                      ? "opacity-100 visible scale-100 translate-x-0 translate-y-0"
+                      : "opacity-0 invisible scale-75 translate-x-2 -translate-y-2"
+                  }`}
+          >
+            <div
+              className={`
+                  absolute w-0 h-0 
+                  border-l-[20px] border-l-transparent 
+                  border-r-[20px] border-r-transparent 
+                  border-b-[14px] border-b-white 
+                  right-6 top-5 z-50`}
+            ></div>
+            <div
+              className={`absolute top-8 right-0 bg-white text-black w-[400px] h-[200px] shadow-lg rounded-lg z-50 
+              flex justify-between flex-col `}
+            >
+              <div className="flex flex-col items-center mt-[48px] ">
+                <img
+                  src={CartEmpty}
+                  alt="cartEmpty"
+                  className="w-20 h-20 mb-3 rounded-full"
+                />
+                <p className="text-base mb-4 ">No products yet</p>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
     </header>
