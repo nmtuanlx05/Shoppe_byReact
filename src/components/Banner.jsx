@@ -29,11 +29,13 @@ export default function Banner() {
   };
   const slideImg = [
     Shoppe1,
-    Shoppe1_1,
+      Shoppe1_1,
+    Shoppe1_2,
     Shoppe1_3,
     Shoppe1_4,
     Shoppe1_5,
-    Shoppe1_6,
+      Shoppe1_6,
+    
   ];
     // console.log(slideImg)
     console.log("Shoppe1" , Shoppe1)
@@ -41,7 +43,7 @@ export default function Banner() {
     <>
       <div className="mt-8 px-14 ">
         {/* banner anh  */}
-        <div className="flex gap-2  ">
+        <div className="flex gap-2 relative z-0 ">
           <Carousel
             responsive={responsive}
             infinite={true}
@@ -49,9 +51,9 @@ export default function Banner() {
             autoPlaySpeed={3000}
             arrows={true}
             keyBoardControl={true}
-            containerClass="carousel-container"
-            itemClass="carousel-item-padding-40-px"
-            className="w-2/3 "
+            containerClass="carousel-container "
+            itemClass="carousel-item-padding-40-px "
+            className="w-2/3  "
           >
             {slideImg.map((img, index) => (
               <img

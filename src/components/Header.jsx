@@ -42,10 +42,10 @@ export default function Header() {
             <div className="absolute top-full left-0 w-[200px] h-8 bg-transparent group-hover:block" />
 
             <div
-              className={`absolute w-[200px] h-auto mt-3 bg-white rounded shadow p-2.5 
+              className={` absolute w-[200px] h-auto mt-3 bg-white rounded shadow p-2.5 z-50 
                ${
                  showQR
-                   ? "opacity-100 block visible "
+                   ? "opacity-100 block visible  "
                    : "opacity-0 block invisible "
                } transition-opacity duration-300 ease-in-out `}
             >
@@ -93,7 +93,7 @@ export default function Header() {
             {/* handle show notifications */}
             <div className="absolute top-full left-0 w-[100px] h-4 bg-transparent group-hover:block" />
             <div
-              className={`origin-top-right  transition-all duration-300 ease-out transform absolute right-0 top-1
+              className={`origin-top-right  transition-all duration-300 ease-out transform absolute right-0 top-1 z-[999]
                   ${
                     showNoty
                       ? "opacity-100 visible scale-100 translate-x-0 translate-y-0"
@@ -109,7 +109,7 @@ export default function Header() {
                   right-6 top-5 z-50`}
               ></div>
               <div
-                className={`absolute top-8 right-0 bg-white text-black w-[360px] h-[320px] shadow-lg rounded-lg z-50 
+                className={`absolute top-8 right-0 bg-white text-black w-[360px] h-[320px] shadow-lg rounded-lg z-9999 
               flex justify-between flex-col`}
               >
                 <div className="flex flex-col items-center mt-[92px] ">
@@ -189,7 +189,7 @@ export default function Header() {
           </button>
           <div className="absolute top-full left-0 w-[100px] h-4 bg-transparent group-hover:block" />
           <div
-            className={`origin-top-right  transition-all duration-300 ease-out transform absolute right-8 top-3
+            className={`origin-top-right  transition-all duration-300 ease-out transform absolute right-8 top-3 z-[999]
                   ${
                     showCart
                       ? "opacity-100 visible scale-100 translate-x-0 translate-y-0"
