@@ -42,7 +42,7 @@ export default function Header() {
             <div className="absolute top-full left-0 w-[200px] h-8 bg-transparent group-hover:block" />
 
             <div
-              className={`absolute w-[200px] h-auto mt-3 bg-white rounded shadow p-2.5
+              className={`absolute w-[200px] h-auto mt-3 bg-white rounded shadow p-2.5 
                ${
                  showQR
                    ? "opacity-100 block visible "
