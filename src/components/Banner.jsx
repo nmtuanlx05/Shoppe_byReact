@@ -4,7 +4,7 @@ import Shoppe3 from "../assets/shoppe3.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Shoppe1_1 from "../assets/Shoppe1.1.jpeg";
-import Shoppe1_2 from "../assets/Shoppe1.2.jpeg";
+// import Shoppe1_2 from "../assets/Shoppe1.2.jpeg";
 import Shoppe1_3 from "../assets/Shoppe1.3.png";
 import Shoppe1_4 from "../assets/Shoppe1.4.jpeg";
 import Shoppe1_5 from "../assets/Shoppe1.5.jpeg";
@@ -29,19 +29,16 @@ export default function Banner() {
   };
   const slideImg = [
     Shoppe1,
-      Shoppe1_1,
-    Shoppe1_2,
+    Shoppe1_1,
     Shoppe1_3,
     Shoppe1_4,
     Shoppe1_5,
-      Shoppe1_6,
-    
+    Shoppe1_6,
   ];
-    // console.log(slideImg)
-    console.log("Shoppe1" , Shoppe1)
+
   return (
     <>
-      <div className="mt-8 px-14 ">
+      <div className="pt-8 px-14 bg-white ">
         {/* banner anh  */}
         <div className="flex gap-2 relative z-0 ">
           <Carousel
