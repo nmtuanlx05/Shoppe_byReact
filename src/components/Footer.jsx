@@ -173,7 +173,7 @@ export default function Footer() {
           <h3 className="font-semibold">DOWNLOAD SHOPEE APP </h3>
           <div className="flex mt-5 cursor-pointer ">
             <img src="https://down-vn.img.susercontent.com/file/a5e589e8e118e937dc660f224b9a1472" alt="QR" className="bg-white shadow-[0_0.1rem_0.2rem_0_rgba(0,0,0,0.2)]   " />
-            <div className="grid-rows-3 grid gap-2 ml-3">
+            <div className="grid-rows-3 grid gap-2` ml-3">
               <img src="https://down-vn.img.susercontent.com/file/ad01628e90ddf248076685f73497c163" alt="" className="bg-white shadow-[0_0.1rem_0.2rem_0_rgba(0,0,0,0.2)] h-6" />
               <img src="https://down-vn.img.susercontent.com/file/ae7dced05f7243d0f3171f786e123def" alt="" className="bg-white shadow-[0_0.1rem_0.2rem_0_rgba(0,0,0,0.2)] h-6" />
               <img src="https://down-vn.img.susercontent.com/file/35352374f39bdd03b25e7b83542b2cb0" alt="" className="bg-white shadow-[0_0.1rem_0.2rem_0_rgba(0,0,0,0.2)] h-6"/>
